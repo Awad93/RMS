@@ -1,0 +1,743 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{29C20D6C-5A74-485E-8473-CE7502D467DE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RMS</RootNamespace>
+    <AssemblyName>RMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\Users\Admin\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Highcharts.Web.Mvc">
+      <HintPath>..\..\..\..\..\Desktop\Sami's files\Highcharts_ASPNET_MVC_4_1_7_0\bin\Highcharts.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="Content\bootstrap-select.css" />
+    <Content Include="Content\bootstrap-select.min.css" />
+    <Content Include="Content\custom.repository.css" />
+    <Content Include="Content\flat-admin-v2\css\animate.min.css" />
+    <Content Include="Content\flat-admin-v2\css\bootstrap-switch.min.css" />
+    <Content Include="Content\flat-admin-v2\css\bootstrap.min.css" />
+    <Content Include="Content\flat-admin-v2\css\checkbox3.min.css" />
+    <Content Include="Content\flat-admin-v2\css\dataTables.bootstrap.css" />
+    <Content Include="Content\flat-admin-v2\css\flat-blue.css" />
+    <Content Include="Content\flat-admin-v2\css\font-awesome.min.css" />
+    <Content Include="Content\flat-admin-v2\css\jquery.dataTables.min.css" />
+    <Content Include="Content\flat-admin-v2\css\select2.min.css" />
+    <Content Include="Content\flat-admin-v2\css\style.css" />
+    <Content Include="Content\flat-admin-v2\js\ace.js" />
+    <Content Include="Content\flat-admin-v2\js\app.js" />
+    <Content Include="Content\flat-admin-v2\js\bootstrap-switch.min.js" />
+    <Content Include="Content\flat-admin-v2\js\bootstrap.min.js" />
+    <Content Include="Content\flat-admin-v2\js\Chart.min.js" />
+    <Content Include="Content\flat-admin-v2\js\dataTables.bootstrap.min.js" />
+    <Content Include="Content\flat-admin-v2\js\index.js" />
+    <Content Include="Content\flat-admin-v2\js\jquery.dataTables.min.js" />
+    <Content Include="Content\flat-admin-v2\js\jquery.matchHeight-min.js" />
+    <Content Include="Content\flat-admin-v2\js\jquery.min.js" />
+    <Content Include="Content\flat-admin-v2\js\mode-html.js" />
+    <Content Include="Content\flat-admin-v2\js\select2.full.min.js" />
+    <Content Include="Content\flat-admin-v2\js\theme-github.js" />
+    <Content Include="Content\main.css" />
+    <Content Include="Images\loading-gif.gif" />
+    <Content Include="Images\loading-gif2.gif" />
+    <Content Include="Profile\Forms\Search_ISIPublication.aspx" />
+    <Content Include="Profile\Forms\Update_Books.aspx" />
+    <Content Include="Profile\Forms\Update_ISI_Publications.aspx" />
+    <Content Include="Profile\Forms\Update_NonISI_Publications.aspx" />
+    <Content Include="Profile\Forms\Update_Researcher_Info.aspx" />
+    <Content Include="Profile\Pages\Profile.aspx" />
+    <Content Include="Repository\Admin\Pages\Admin_HomePage.aspx" />
+    <Content Include="Repository\Admin\Pages\admin_page.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Repository\Admin\Reports\Citations.aspx" />
+    <Content Include="Repository\Admin\Reports\Faculty_Ranking.aspx" />
+    <Content Include="Repository\Admin\Reports\Publications.aspx" />
+    <Content Include="Repository\Admin\Reports\Student_Involvment.aspx" />
+    <Content Include="Repository\MasterPage.Master" />
+    <Content Include="Repository\Public\Pages\index.aspx" />
+    <Content Include="Scripts\bootstrap-select.js" />
+    <Content Include="Scripts\bootstrap-select.min.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\adapters\standalone-framework.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\adapters\standalone-framework.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-3d.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-3d.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-all.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-more.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts-more.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\highcharts.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\canvas-tools.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\canvas-tools.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\data.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\data.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\drilldown.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\drilldown.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\exporting.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\exporting.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\funnel.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\funnel.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\heatmap.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\heatmap.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\no-data-to-display.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\no-data-to-display.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\solid-gauge.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\modules\solid-gauge.src.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\dark-blue.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\dark-green.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\dark-unica.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\gray.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\grid-light.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\grid.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\sand-signika.js" />
+    <Content Include="Scripts\Highcharts-4.0.1\js\themes\skies.js" />
+    <Content Include="Scripts\i18n\defaults-ar_AR.js" />
+    <Content Include="Scripts\i18n\defaults-ar_AR.min.js" />
+    <Content Include="Scripts\i18n\defaults-bg_BG.js" />
+    <Content Include="Scripts\i18n\defaults-bg_BG.min.js" />
+    <Content Include="Scripts\i18n\defaults-cro_CRO.js" />
+    <Content Include="Scripts\i18n\defaults-cro_CRO.min.js" />
+    <Content Include="Scripts\i18n\defaults-cs_CZ.js" />
+    <Content Include="Scripts\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="Scripts\i18n\defaults-da_DK.js" />
+    <Content Include="Scripts\i18n\defaults-da_DK.min.js" />
+    <Content Include="Scripts\i18n\defaults-de_DE.js" />
+    <Content Include="Scripts\i18n\defaults-de_DE.min.js" />
+    <Content Include="Scripts\i18n\defaults-en_US.js" />
+    <Content Include="Scripts\i18n\defaults-en_US.min.js" />
+    <Content Include="Scripts\i18n\defaults-es_CL.js" />
+    <Content Include="Scripts\i18n\defaults-es_CL.min.js" />
+    <Content Include="Scripts\i18n\defaults-eu.js" />
+    <Content Include="Scripts\i18n\defaults-eu.min.js" />
+    <Content Include="Scripts\i18n\defaults-fa_IR.js" />
+    <Content Include="Scripts\i18n\defaults-fa_IR.min.js" />
+    <Content Include="Scripts\i18n\defaults-fi_FI.js" />
+    <Content Include="Scripts\i18n\defaults-fi_FI.min.js" />
+    <Content Include="Scripts\i18n\defaults-fr_FR.js" />
+    <Content Include="Scripts\i18n\defaults-fr_FR.min.js" />
+    <Content Include="Scripts\i18n\defaults-hu_HU.js" />
+    <Content Include="Scripts\i18n\defaults-hu_HU.min.js" />
+    <Content Include="Scripts\i18n\defaults-id_ID.js" />
+    <Content Include="Scripts\i18n\defaults-id_ID.min.js" />
+    <Content Include="Scripts\i18n\defaults-it_IT.js" />
+    <Content Include="Scripts\i18n\defaults-it_IT.min.js" />
+    <Content Include="Scripts\i18n\defaults-ko_KR.js" />
+    <Content Include="Scripts\i18n\defaults-ko_KR.min.js" />
+    <Content Include="Scripts\i18n\defaults-lt_LT.js" />
+    <Content Include="Scripts\i18n\defaults-lt_LT.min.js" />
+    <Content Include="Scripts\i18n\defaults-nb_NO.js" />
+    <Content Include="Scripts\i18n\defaults-nb_NO.min.js" />
+    <Content Include="Scripts\i18n\defaults-nl_NL.js" />
+    <Content Include="Scripts\i18n\defaults-nl_NL.min.js" />
+    <Content Include="Scripts\i18n\defaults-pl_PL.js" />
+    <Content Include="Scripts\i18n\defaults-pl_PL.min.js" />
+    <Content Include="Scripts\i18n\defaults-pt_BR.js" />
+    <Content Include="Scripts\i18n\defaults-pt_BR.min.js" />
+    <Content Include="Scripts\i18n\defaults-pt_PT.js" />
+    <Content Include="Scripts\i18n\defaults-pt_PT.min.js" />
+    <Content Include="Scripts\i18n\defaults-ro_RO.js" />
+    <Content Include="Scripts\i18n\defaults-ro_RO.min.js" />
+    <Content Include="Scripts\i18n\defaults-ru_RU.js" />
+    <Content Include="Scripts\i18n\defaults-ru_RU.min.js" />
+    <Content Include="Scripts\i18n\defaults-sk_SK.js" />
+    <Content Include="Scripts\i18n\defaults-sk_SK.min.js" />
+    <Content Include="Scripts\i18n\defaults-sl_SI.js" />
+    <Content Include="Scripts\i18n\defaults-sl_SI.min.js" />
+    <Content Include="Scripts\i18n\defaults-sv_SE.js" />
+    <Content Include="Scripts\i18n\defaults-sv_SE.min.js" />
+    <Content Include="Scripts\i18n\defaults-tr_TR.js" />
+    <Content Include="Scripts\i18n\defaults-tr_TR.min.js" />
+    <Content Include="Scripts\i18n\defaults-ua_UA.js" />
+    <Content Include="Scripts\i18n\defaults-ua_UA.min.js" />
+    <Content Include="Scripts\i18n\defaults-zh_CN.js" />
+    <Content Include="Scripts\i18n\defaults-zh_CN.min.js" />
+    <Content Include="Scripts\i18n\defaults-zh_TW.js" />
+    <Content Include="Scripts\i18n\defaults-zh_TW.min.js" />
+    <Content Include="z_misc\AjaxControlToolkit.dll" />
+    <Content Include="z_misc\Dashboard.aspx" />
+    <Content Include="z_misc\SQL scripts\dbscript_sp-all.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_AddAuthorToBook.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_AddAuthorToNonISIPublication.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_AddBookAsUnverified.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_AddNonISIPublicationAsUnapproved.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetBooksAll.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetBooksByCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetBooksByDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetBooksByFaculty.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetCitationStatsForFacultyAllCollegesByYear.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetCitationStatsForFacultySingleCollegeByYear.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetCitationStatsForFacultySingleDepartmentByYear.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetCitationStatsForISIPublicationsForAllColleges.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetCitationStatsForISIPublicationsForSingleCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetCitationStatsForISIPublicationsForSingleDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetCitationStatsForStudentInvolvementForSingleDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetCollegesAll.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetConferencesAll.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetConferencesByCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetConferencesByDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetConferencesByFaculty.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetDepartmentsByCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetDistinctISIDocumentTypes.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetFacultyAll.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetFacultyByCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetFacultyByDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetFacultyByID.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetFacultyByName.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetFacultyByNameAndCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetISIPublicationsAll.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetISIPublicationsAllCollegesByDocType.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetISIPublicationsByFaculty.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetISIPublicationsForSingleCollegeByDocType.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetISIPublicationsForSingleDepartmentByDocType.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetNonISIPublicationsAll.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetNonISIPublicationsByCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetNonISIPublicationsByDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetNonISIPublicationsByFaculty.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPatentsIssuedAll.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPatentsIssuedByCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPatentsIssuedByDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPatentsIssuedByFaculty.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPublicationStatsForFacultyAllCollegesByYear.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPublicationStatsForFacultySingleCollegeByYear.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPublicationStatsForFacultySingleDepartmentByYear.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPublicationStatsForISIPublicationsForAllDocTypesSingleDepartmentAllYears.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPublicationStatsForStudentInvolvementForSingleCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPublicationStatsForStudentInvolvementForSingleDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPubStatsForISIPublicationsAllCollegesAllYears.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPubStatsForISIPublicationsForSingleCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPubStatsForISIPublicationsForSingleDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPubStatsForNonISIPublicationsAllCollegesAllYears.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPubStatsForNonISIPublicationsForSingleCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetPubStatsForNonISIPublicationsForSingleDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_getRepositoryItemCountsAll.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_getRepositoryItemCountsByCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_getRepositoryItemCountsByDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_getRepositoryItemCountsByFaculty.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForBooks.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForBooksByCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForBooksByDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForBooksByFaculty.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForBooksByFacutly.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForISIPublicationsByFaculty.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForNonISIPublicationsByFaculty.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForPublicationPoints.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForPublicationPointsByCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForPublicationPointsByDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForPublicationPointsByFaculty.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForStudentCitationTimesForAllDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForStudentCitationTimesForSingleDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForStudentInvolvementForSingleCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForStudentISIPublicationsForAllDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_GetStatsForStudentISIPublicationsForSingleDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_SearchFacultyByName.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_SearchFacultyByNameAndCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_SearchFacultyByNameAndDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_SearchISIPublicationsByAuthorsAndMissingKFUPMIDAndTitle.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_SearchISIPublicationsByAuthorsAndMissingKFUPMIDAndWOS.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_SearchISIPublicationsByAuthorsAndMissingKFUPMIDAndYear.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_StatsAll.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_StatsByCollege.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_StatsByDepartment.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\dbo.sp_rep_StatsByFaculty.StoredProcedure.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\sp_prof_GetAllRanks.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\sp_prof_GetRanksByType.sql" />
+    <Content Include="z_misc\SQL scripts\Stored procedures\sp_prof_UpdateResearcherInfo.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Book_Authored.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Book_Authored_Author.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Book_Translated.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Book_Translated_Author.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Conference.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Department.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.GraduateStudent.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Nationality.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Patent_Applied.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Patent_Applied_Author.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Patent_Issued.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Patent_Issued_Author.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Project.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Project_Publication.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Proposal.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Publication_ISI.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Publication_ISI_Author.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Publication_NonISI.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Publication_NonISI_Author.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Researcher.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.RIContribution.Table.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\dbo.Student_Involvement.Table.sql" />
+    <Content Include="Repository\RepositoryMaster.Master" />
+    <Content Include="Repository\MasterPage.Master" />
+    <Content Include="Scripts\bootstrap-select.js.map" />
+    <Content Include="Content\bootstrap-select.css.map" />
+    <Content Include="z_misc\SQL scripts\Tables\Rank.sql" />
+    <Content Include="z_misc\SQL scripts\Tables\Student_Involvement.sql" />
+    <Content Include="bin\ApplicationInsights.config" />
+    <Content Include="bin\RMS.dll.config" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="bin\WebApplication1.dll.config" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Site.Mobile.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\AppClass.cs" />
+    <Compile Include="Models\Rank.cs" />
+    <Compile Include="Models\Student_Involvement.cs" />
+    <Compile Include="Profile\Forms\Update_Books.aspx.cs">
+      <DependentUpon>Update_Books.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\Forms\Update_Books.aspx.designer.cs">
+      <DependentUpon>Update_Books.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\Forms\Update_ISI_Publications.aspx.cs">
+      <DependentUpon>Update_ISI_Publications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\Forms\Update_ISI_Publications.aspx.designer.cs">
+      <DependentUpon>Update_ISI_Publications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\Forms\Update_NonISI_Publications.aspx.cs">
+      <DependentUpon>Update_NonISI_Publications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\Forms\Update_NonISI_Publications.aspx.designer.cs">
+      <DependentUpon>Update_NonISI_Publications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\Forms\Update_Researcher_Info.aspx.cs">
+      <DependentUpon>Update_Researcher_Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\Forms\Update_Researcher_Info.aspx.designer.cs">
+      <DependentUpon>Update_Researcher_Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\Pages\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\Pages\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\Forms\Search_ISIPublication.aspx.cs">
+      <DependentUpon>Search_ISIPublication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\Forms\Search_ISIPublication.aspx.designer.cs">
+      <DependentUpon>Search_ISIPublication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Admin\Pages\Admin_HomePage.aspx.cs">
+      <DependentUpon>Admin_HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repository\Admin\Pages\Admin_HomePage.aspx.designer.cs">
+      <DependentUpon>Admin_HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Admin\Reports\Citations.aspx.cs">
+      <DependentUpon>Citations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repository\Admin\Reports\Citations.aspx.designer.cs">
+      <DependentUpon>Citations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Admin\Reports\Faculty_Ranking.aspx.cs">
+      <DependentUpon>Faculty_Ranking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repository\Admin\Reports\Faculty_Ranking.aspx.designer.cs">
+      <DependentUpon>Faculty_Ranking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Admin\Reports\Student_Involvment.aspx.cs">
+      <DependentUpon>Student_Involvment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repository\Admin\Reports\Student_Involvment.aspx.designer.cs">
+      <DependentUpon>Student_Involvment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repository\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Public\Pages\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repository\Public\Pages\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="z_misc\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="z_misc\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Admin\Pages\admin_page.aspx.cs">
+      <DependentUpon>admin_page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repository\Admin\Pages\admin_page.aspx.designer.cs">
+      <DependentUpon>admin_page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Code\DbAccess.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Repository\Admin\Reports\Publications.aspx.cs">
+      <DependentUpon>Publications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repository\Admin\Reports\Publications.aspx.designer.cs">
+      <DependentUpon>Publications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\RepositoryMaster.Master.cs">
+      <DependentUpon>RepositoryMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Repository\RepositoryMaster.Master.designer.cs">
+      <DependentUpon>RepositoryMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Book_Authored.cs" />
+    <Compile Include="Models\Book_Authored_Author.cs" />
+    <Compile Include="Models\Book_Translated.cs" />
+    <Compile Include="Models\Book_Translated_Author.cs" />
+    <Compile Include="Models\Conference.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\GraduateStudent.cs" />
+    <Compile Include="Models\Nationality.cs" />
+    <Compile Include="Models\Patent_Applied.cs" />
+    <Compile Include="Models\Patent_Applied_Author.cs" />
+    <Compile Include="Models\Patent_Issued.cs" />
+    <Compile Include="Models\Patent_Issued_Author.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\Project_Publication.cs" />
+    <Compile Include="Models\Proposal.cs" />
+    <Compile Include="Models\Publication_ISI.cs" />
+    <Compile Include="Models\Publication_ISI_Author.cs" />
+    <Compile Include="Models\Publication_NonISI.cs" />
+    <Compile Include="Models\Publication_NonISI_Author.cs" />
+    <Compile Include="Models\Researcher.cs" />
+    <Compile Include="Models\RIContribution.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="Models\Summary.cs" />
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1832</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2006/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+
+  <siteMapNode title="RMS" description="RMS">
+    <siteMapNode title="Repository" description="Repository">
+      <siteMapNode title="Admin" description="Admin">
+        <siteMapNode title="Pages" description="Pages">
+          <siteMapNode url="~/Repository/Admin/Pages/admin_page.aspx" title="Admin page" description="The default admin page"/>
+          <siteMapNode url="~/Repository/Admin/Pages/Admin_HomePage.aspx" title="Admin home page"/>
+        </siteMapNode>
+        <siteMapNode title="Reports"  description="Reports">
+          <siteMapNode url="~/Repository/Admin/Reports/Citations.aspx" title="Citations"/>
+          <siteMapNode url="~/Repository/Admin/Reports/Faculty_Ranking.aspx" title="Faculty Ranking"/>
+          <siteMapNode url="~/Repository/Admin/Reports/Publications.aspx" title="Publications"/>
+          <siteMapNode url="~/Repository/Admin/Reports/Student_Involvment.aspx" title="Student Involvement"/>
+        </siteMapNode>
+      </siteMapNode>
+      <siteMapNode title="Public" description="Admin">
+        <siteMapNode title="Pages" description="Pages">
+          <siteMapNode url="~/Repository/Public/Pages/results_page.aspx" title="Admin page" description="Admin page"/>
+          <siteMapNode url="~/Repository/Public/Pages/Update_publications.aspx" title="Update publications" description="Update publications"/>
+        </siteMapNode>
+      </siteMapNode>
+      <siteMapNode title="Profile" description="Profile">
+        <siteMapNode title="Forms"  description="Forms">
+          <siteMapNode url="~/Profile/Forms/Update_Books.aspx" title="Update Books" description="Update Books"/>
+          <siteMapNode url="~/Profile/Forms/Update_NonISI_Publications.aspx" title="Update Non ISI publications" description="Update Non ISI publications"/>
+          <siteMapNode url="~/Profile/Forms/Update_Researcher_Info.aspx" title="Update Your Info" description="Update researcher's info page"/>
+        </siteMapNode>
+        <siteMapNode title="Pages" description="Pages">
+          <siteMapNode url="~/Profile/Pages/Profile.aspx" title="Profile" description="The default profile page"/>
+        </siteMapNode>
+      </siteMapNode>
+    </siteMapNode>
+  </siteMapNode>
+
+
+</siteMap>
